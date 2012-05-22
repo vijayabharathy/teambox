@@ -1,10 +1,9 @@
 development:
-  adapter: mysql
-  host: localhost
-  username: root 
-  password:
-  database: teambox2
-  
+  adapter: sqlite3
+  database: db/development.sqlite3
+  pool: 5
+  timeout: 5000
+
 test: &TEST
   adapter: mysql
   host: localhost

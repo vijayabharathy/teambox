@@ -4,10 +4,14 @@ module ApplicationHelper
   def content_for(*args)
     super unless args.first.to_sym == :column and mobile?
   end
+
+  def logo_alt
+    @organization && !@organization.logo_alt.blank? ? @organization.logo_alt : "Teambox"
+  end
   
   def logo_image
     logo = @organization ? @organization.logo(:top) : "header_logo_black.png"
-    image_tag(logo, :alt => "Teambox")
+    image_tag(logo, :alt => logo_alt)
   end
 
   def archived_project_strip(project)

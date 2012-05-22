@@ -129,3 +129,13 @@ Feature: Managing organizations
     And I follow "Delete"
     And I follow "Delete this organization" confirming with OK
     Then I should see a notice: "You deleted the organization"
+
+  Scenario: I can manage organization Appearance
+    When I go to the home page
+    Then I follow "Organizations"
+    And I follow "ACME"
+    Then I follow "Appearance"
+    And I should see "Appearance for"
+    Then I fill in "organization_logo_alt" with "CiscoBox"
+    And I press "Save changes"
+    Then I should see "Changes saved"

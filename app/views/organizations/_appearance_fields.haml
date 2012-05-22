@@ -9,6 +9,11 @@
       = f.check_box :delete_logo
       = f.label :delete_logo, t('.delete_custom_logo')
 
+.text_field
+  %label LogoTitle
+  .option
+    = f.text_field :logo_alt
+
 .text_area
   %label= t('.description_html')
   = errors_for @organization, :description

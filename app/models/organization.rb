@@ -27,7 +27,7 @@ class Organization < ActiveRecord::Base
   before_destroy :prevent_if_projects
   
   attr_accessor :is_example, :delete_logo
-  attr_accessible :name, :permalink, :description, :logo, :settings, :delete_logo, :omit_email_processing
+  attr_accessible :name, :permalink, :description, :logo, :settings, :delete_logo, :omit_email_processing, :logo_alt
 
   LogoSizes = {
     :square   => [96, 96],

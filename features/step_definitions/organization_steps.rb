@@ -95,3 +95,7 @@ When /^(?:|I )check the checkbox "([^\"]*)"(?: within "([^\"]*)")?$/ do |locator
     find(:xpath, ".//input[./@type = 'checkbox'][((./@id = '#{locator}' or ./@name = '#{locator}') or ./@id = //label[contains(./text(), '#{locator}')]/@for)] | .//label[contains(normalize-space(.), '#{locator}')]//.//input[./@type = 'checkbox']", :message => msg).set(true)
   end
 end
+
+Then /^I should see the alt text "([^\"]*)"$/ do | alt_text |
+  page.should have_xpath("//img[@alt=#{alt_text}]")
+end
