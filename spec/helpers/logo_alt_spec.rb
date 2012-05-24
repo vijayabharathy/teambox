@@ -6,7 +6,7 @@ describe ApplicationHelper, "#logo_alt" do
   end
 
   it "should return default alt" do
-      helper.logo_alt.should == "Teambox"
+    helper.logo_alt.should == "Teambox"
   end
 
   it "should return user defined alt" do
