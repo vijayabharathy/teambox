@@ -2,7 +2,7 @@ class AddUniquenessIndexToPeople < ActiveRecord::Migration
   def self.up
     remove_index :people, [:user_id, :project_id]
     Person.connection.execute <<-EOF
-      DELETE #{Person.table_name}
+      DELETE
       FROM #{Person.table_name}
       LEFT OUTER JOIN (
          SELECT MIN(id) as id, user_id, project_id
